@@ -6,11 +6,11 @@
 /*   By: leeios <leeios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 14:55:58 by leeios            #+#    #+#             */
-/*   Updated: 2017/07/06 11:07:06 by leeios           ###   ########.fr       */
+/*   Updated: 2017/07/10 11:47:56 by leeios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-package main
+package PSQLSerial
 
 import (
 	"time"
@@ -97,10 +97,10 @@ type Formation struct {
 // TeacherGroup and StudentGroup are the common factors between classes
 type Session struct {
 	// insert row "ALL" (id=0) in Session
-	Id         ID        `sql_attr:"PRIMARY_KEY"`
-	Start_time time.Time `sql_attr:"NOT NULL"`
-	End_time   time.Time `sql_attr:"NOT NULL"`
-	Comment    string    `` // e.g: 'Year 2016/2017'
+	Id      ID        `sql_attr:"PRIMARY_KEY"`
+	Start   time.Time `sql_attr:"NOT NULL"`
+	End     time.Time `sql_attr:"NOT NULL"`
+	Comment string    `` // e.g: 'Year 2016/2017'
 
 	Formation    Formation `sql_attr:"NOT NULL" sql_ref_table:"formation"`
 	TeacherGroup UserGroup `sql_ref_table:"usergroup"` // May be NULL if always defined in Class

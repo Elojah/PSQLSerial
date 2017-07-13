@@ -6,11 +6,11 @@
 /*   By: leeios <leeios@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/05 17:00:12 by leeios            #+#    #+#             */
-/*   Updated: 2017/07/06 17:52:29 by leeios           ###   ########.fr       */
+/*   Updated: 2017/07/09 20:15:23 by leeios           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-package main
+package PSQLSerial
 
 import (
 	"fmt"
@@ -39,7 +39,7 @@ func (b BadFormatColumns) Error() string {
 type BadFormatWhere struct{}
 
 func (b BadFormatWhere) Error() string {
-	return (`Where field is not a map`)
+	return (`Where field is not well formatted`)
 }
 
 type ColumnNotString struct{}
